@@ -18,8 +18,8 @@ jobs:
       steps:
         - uses: actions/checkout@v4
           with:
-            ref: '1.20.1'
-            sparse-checkout: 'docs'
+            # ref: '1.20.1'
+            sparse-checkout: 'documentation'
             path: '.'
         - uses: actions/setup-python@v4
           with:
