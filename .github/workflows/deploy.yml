@@ -15,23 +15,23 @@ jobs:
     build:
       name: build docs
       runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: ./documentation
       steps:
         - uses: actions/checkout@v4
           with:
             # ref: '1.20.1'
-            sparse-checkout: 'documentation'
-        - run: |
-            cd './documentation/'
-            ls
+            sparse-checkout: './documentation'
         - uses: actions/setup-python@v4
           with:
             python-version: '3.11'
             cache: 'pip'
-        - run: pip install -r requirements.txt
+        - run: pip install -r ./requirements.txt
         - uses: actions/cache@v4
           with:
               key: 'mkdocs-cache'
-              path: '.cache'
+              path: './documentation/.cache'
         - name: Build static files
           id: mkdocs
           run: mkdocs build
@@ -39,7 +39,7 @@ jobs:
           id: artifact
           uses: actions/upload-pages-artifact@v3
           with:
-            path: 'site/'
+            path: './documentation/site/'
 
     deploy:
       runs-on: ubuntu-latest
