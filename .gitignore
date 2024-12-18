@@ -1,0 +1,14 @@
+.vscode
+.vscode/*
+.vscode/
+
+env/
+venv/
+.env
+.venv
+[Ii]nclude
+[Ll]ib
+[Ss]cripts
+
+site
+.cache
