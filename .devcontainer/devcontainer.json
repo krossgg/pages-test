@@ -4,8 +4,8 @@
     "name": "Docs Codespace",
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "workspaceMount": "source=${localWorkspaceFolder}/docs,target=/docs,type=bind",
-    "workspaceFolder": "/docs",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/modern,type=bind",
+    "workspaceFolder": "/modern/docs",
     "features": {
       "ghcr.io/devcontainers/features/python:1": {
         "installTools": true,
