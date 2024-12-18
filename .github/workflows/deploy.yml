@@ -20,7 +20,9 @@ jobs:
           with:
             # ref: '1.20.1'
             sparse-checkout: 'documentation'
-        - run: cd './documentation/'
+        - run: |
+            cd './documentation/'
+            ls
         - uses: actions/setup-python@v4
           with:
             python-version: '3.11'
